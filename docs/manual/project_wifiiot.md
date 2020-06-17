@@ -136,7 +136,7 @@ pip install scons
  
 **步骤 8**	设置`波特率`为`921600`
 
-**步骤 9**	配置好后点击![avatar](images/confirm.png)进行保存
+**步骤 9**	配置好后点击![avatar](images/confirm.png)进行保存. <font color='red'> （注意：使用HiBurner烧录方式时，确保先把JLINK烧录设备从开发板移除，否则无法烧录） </font>
 
 **步骤 10**	点击工具栏上的图标![avatar](images/burn.png)进行烧录
 
