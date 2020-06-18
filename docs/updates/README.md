@@ -1,17 +1,10 @@
 version 1.45.10
 
-有任何问题, 请随时联系我们的技术支持人员：
-
-<a href="im:z00373366"> zhushangyuan 00373366</a> &nbsp;&nbsp; <a href="im:l00277914">linaidi 00277914</a>&nbsp;&nbsp; <a href="im:y00520256">yangguangwei 00520256</a>&nbsp;&nbsp; <a href="im:z00305011">zhoujing 00305011</a> 
-  
+有任何问题, 请随时联系我们的技术支持人员。
 
 欢迎使用我们的新版本, 在此版本中新增、完善的特性如下：
 
 #### 版本升级
-
-- LiteOS Studio底座升级至[VSCode-Huawei Ver 1.45.1](https://marketplace.rnd.huawei.com/vscode_huawei)
-
-- LiteOS Studio扩展发布至[华为VSCode应用市场](https://marketplace.rnd.huawei.com/search?target=VSCode&category=All%20categories&sortBy=Popular&searchText=liteos%20studio)
 
 - 灵活支持各种开发板工程,支持快捷极简的编译、烧录、调试、目标板等工程配置
 
