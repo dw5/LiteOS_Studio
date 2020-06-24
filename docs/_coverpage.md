@@ -10,8 +10,8 @@
 
 >  的一款轻量级定制集成开发环境解决方案。
 
-[使用文档](/manual/)
-[工程示例](manual/project_stm32.md)
+[使用文档](/README)
+[工程示例](project_stm32.md)
 [技术支持](https://gitee.com/LiteOS/LiteOS_Studio/issues)
 [Beta测试中](/)
 

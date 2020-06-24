@@ -24,7 +24,7 @@
 
 通过菜单`File`中的`New Project`打开新建工程界面。在使用`HUAWEI LiteOS Studio`新建STM32工程时，需要联网，如果需要代理，请提前配置好代理，否则无
 
-法访问`https://gitee.com/`，下载会失败，配置代理方法参考[常见问题](/manual/studio_qa?id=新建工程失败问题)解决。
+法访问`https://gitee.com/`，下载会失败，配置代理方法参考[常见问题](/studio_qa?id=新建工程失败问题)解决。
 
 **步骤 1** 在`工程名称`中填入自定义的工程名
 

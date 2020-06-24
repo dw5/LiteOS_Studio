@@ -15,6 +15,15 @@
     window.$docsify = {
       name: '',
       repo: '',
+      search: {
+        noData: {
+          '/': 'No results!'
+        },
+        paths: 'auto',
+        placeholder: {
+          '/': 'Search'
+        }
+      },
       loadSidebar: true,
       loadNavbar: true,
       subMaxLevel: 4,
@@ -23,5 +32,6 @@
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/search.min.js"></script>
 </body>
 </html>
