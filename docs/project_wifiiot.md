@@ -474,47 +474,47 @@ Hi3861包含的头文件
 
 **交通灯：** 此模块主要包括三部分：<font color=red> 炫彩三色灯部分，由红绿蓝三种颜色组成</font>，通过PWM来驱动，可以通过调节RGB的比例来呈现出不同的颜色，通过调节占空比来调节灯的亮度；人体红外传感器部分，通过红外探头发出的红外信号来检测外部环境的人体活动情况；光敏电阻，主要用于检测外部环境的光照情况。此模块和炫彩灯一样有防呆的箭头和标号。
 
-<img src="/images/hi3861/traffic_light/smarttraffic_light.png" height = "400" alt="智能交通灯" />
+<img src="/images/hi3861/trafficLight/smartTrafficLight.png" height = "400" alt="智能交通灯" />
 
-<img src="/images/hi3861/traffic_light/foolProofArrow.png" height = "400" alt="防呆箭头和标号" />
+<img src="/images/hi3861/trafficLight/foolProofArrow.png" height = "400" alt="防呆箭头和标号" />
 
 #### 组件配置
 在HUAWEI LiteOS Studio上的配置中除了组件配置要重新配置下外，其他的配置和炫彩灯demo一致。交通灯demo的组件配置如下：按照截图中1/2/3步骤进行配置即可。
 
-<img src="/images/hi3861/traffic_light/componentSetting.png" height = "400" alt="组件配置" />
+<img src="/images/hi3861/trafficLight/componentSetting.png" height = "400" alt="组件配置" />
 
 #### 烧录后启动的效果
 实际效果：<font color=red>交通灯demo一共有3种模式</font>
 
 **（1）** <font color=red>Control Mode: </font>进入Traffic Light demo，初始状态就是Control Mode，是通过右边按键S1来控制红、黄、绿灯的亮灭状态。但是绿灯亮时，蜂鸣器会长周期响，当红灯或绿灯亮时会短周期响。
 
-<img src="/images/hi3861/traffic_light/controlMode.png" height = "350" alt="Control Mode" />
+<img src="/images/hi3861/trafficLight/controlMode.png" height = "350" alt="Control Mode" />
 
 
 **（2）** <font color=red>Auto Mode: </font> 当按下左键S2时，会从control mode跳到Auto mode，交通灯模式，模仿交通灯，红灯常亮5秒，然后闪烁3秒，后黄灯闪烁3秒，后绿灯常亮5秒，再是绿灯闪烁3秒，如此循环。绿灯亮时蜂鸣器长周期响，红灯或黄灯亮时短周期响。最后一行的R,Y,G后面的数字代表倒数	的时间，动态显示，时间的单位是秒，R代表红灯，Y代表黄灯，G代表绿灯，B代表的是蜂鸣器，ON代表蜂鸣器打开状态，OFF代表蜂鸣器关闭状态。交通灯的倒数	时间我们也可以在代码中自己设置。
 
-<img src="/images/hi3861/traffic_light/autoMode.png" height = "350" alt="Auto Mode" />
+<img src="/images/hi3861/trafficLight/autoMode.png" height = "350" alt="Auto Mode" />
 
 
 **（3）**<font color=red>Human Mode: </font>当再次按下左键S2时，会从Auto mode跳到Human Mode模式，就是<font color=red>在Auto mode的基础上增加了人为控制，且红灯常亮改为30秒</font>。模仿交通灯，红灯常亮30秒后闪烁3秒，	黄灯闪烁3秒，然后绿灯常亮5秒，绿灯闪烁3秒，如此循环。</font>一旦有人按下右键S1，红灯立即快闪3秒，进入绿灯常亮5秒</font>，再绿灯闪烁3秒，再进入红灯30秒常亮模式，后进入正常循环。绿灯亮时蜂鸣器长周期响，红灯或黄灯亮时短周期响。此时如果再按一下左键S2就会跳到Return Menu界面，选择按下Continue继续demo循环。
 
-<img src="/images/hi3861/traffic_light/humanMode.png" height = "350" alt="Human Mode" />
+<img src="/images/hi3861/trafficLight/humanMode.png" height = "350" alt="Human Mode" />
 
-<img src="/images/hi3861/traffic_light/returnMenu.png" height = "350" alt="Return Menu" />
+<img src="/images/hi3861/trafficLight/returnMenu.png" height = "350" alt="Return Menu" />
 
 ### 环境监测工程示例
 
 #### 工程创建
 和上一个炫彩灯demo一样打开`HUAWEI LiteOS Studio`进行工程创建和配置，先安装WIFI-IOT开发板及环境监测demo所需的板子——环境监测单板，将环境监测单板安插在底板的最右侧。此模块主要包括三部分：温湿度传感器部分，主要用于检测外部环境的温湿度数据；烟雾传感器部分，主要用于检测外部环境的液化气、苯、酒精、烟雾等气体的浓度，蜂鸣器部分，我们可以设定这两种传感器采集数据的阈值，当数据超过阈值蜂鸣器发出警报。
 
-<img src="/images/hi3861/environment_monitor/environment_monitor.png" height = "400" alt="环境监测" />
+<img src="/images/hi3861/environmentMonitor/environmentMonitor.png" height = "400" alt="环境监测" />
 
-<img src="/images/hi3861/environment_monitor/foolProofArrow.png" height = "400" alt="防呆箭头和标号" />
+<img src="/images/hi3861/environmentMonitor/foolProofArrow.png" height = "400" alt="防呆箭头和标号" />
 
 #### 组件配置
 环境监测demo组件配置如下：1/2/3,其他的配置参考炫彩灯demo。
 
-<img src="/images/hi3861/environment_monitor/componentSetting.png" height = "400" alt="组件配置" />
+<img src="/images/hi3861/environmentMonitor/componentSetting.png" height = "400" alt="组件配置" />
 
 #### 烧录后启动的效果
 实际效果：<font color=red>环境监测demo一共有4种模式</font>
@@ -523,21 +523,21 @@ Hi3861包含的头文件
 T：Temperature温度，H：Humidity湿度，CG：Combustible Gas 可燃气体
 当温度超过25度，蜂鸣器长周期响，超过30度，短周期响,这里的阈值我们也可以在代码中自己设置。
 
-<img src="/images/hi3861/environment_monitor/environmentValueDisplay.png" height = "350" alt="温度、湿度和可燃气体值显示" />
+<img src="/images/hi3861/environmentMonitor/environmentValueDisplay.png" height = "350" alt="温度、湿度和可燃气体值显示" />
 
 **（2）**<font color=red>Temperature Mode</font>: 当再次按下左键S2时，会从Environment Monitoring模式跳到Temperature Mode模式，此模式下的OLED屏上只会显示实时的温度，通过温度传感器来实时监测外界环境的温度数据。
 
-<img src="/images/hi3861/environment_monitor/temperatureDisplay.png" height = "350" alt="温度值显示" />
+<img src="/images/hi3861/environmentMonitor/temperatureDisplay.png" height = "350" alt="温度值显示" />
 
 **（3）**<font color=red>Humidity Mode</font>: 当再次按下左键S2时，会从Temperature Mode模式跳转到Humidity mode模式，此模式下的OLED屏上只会显示实时的湿度，通过湿度传感器来实时监测外界环境的湿度数据。
 
-<img src="/images/hi3861/environment_monitor/humidityDisplay.png" height = "350" alt="湿度值显示" />
+<img src="/images/hi3861/environmentMonitor/humidityDisplay.png" height = "350" alt="湿度值显示" />
 
 **（4）**<font color=red>Combustible Gas Mode</font>: 当再次按下左键S2时，会从Humidity mode模式跳转到Combustible Gas Mode模式，此模式下的OLED屏上只会显示实时可燃气体浓度数据，通过可燃气体传感器来实时监测外界环境的可燃气体浓度数据。此时如果再按一下左键S2就会跳到	Return Menu界面，选择Exit就可以跳转到主菜单选择界面。
 
-<img src="/images/hi3861/environment_monitor/c_GasDisplay.png" height = "350" alt="可燃气体值显示" />
+<img src="/images/hi3861/environmentMonitor/c_GasDisplay.png" height = "350" alt="可燃气体值显示" />
 
-<img src="/images/hi3861/environment_monitor/returnMenu.png" height = "350" alt="Return Menu" />
+<img src="/images/hi3861/environmentMonitor/returnMenu.png" height = "350" alt="Return Menu" />
 
 ### NFC工程案例
 
