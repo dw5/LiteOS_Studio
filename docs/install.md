@@ -49,19 +49,19 @@
 
 #### 安装arm-none-eabi软件
 
-<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`ARM GCC`编译器进行编译， 需要安装编译器软件。 可以通过执行本站提供的<a href="/scripts/GNU_Arm_Embedded_Toolchain_download.bat" target="_blank">GNU Arm Embedded Toolchain自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\tools\arm-none-eabi`目录。
+<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`ARM GCC`编译器进行编译， 需要安装编译器软件。 可以通过执行本站提供的<a href="scripts/GNU_Arm_Embedded_Toolchain_download.bat" target="_blank">GNU Arm Embedded Toolchain自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\tools\arm-none-eabi`目录。
 
 **<font color='red'>注意：通过本站提供的下载程序下载`GNU Arm Embedded Toolchain`，需要先安装`git for windows`工具，并加入环境变量。</font>**
 
 #### 安装Make构建软件
 
-<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`Makefile`文件组织编译和链接程序，我们需要安装`GNU Make`工具。可以通过执行本站提供的<a href="/scripts/x_pack_windows_build_tools_download.bat" target="_blank">x_pack_windows_build_tools_download自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\tools\build`目录
+<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`Makefile`文件组织编译和链接程序，我们需要安装`GNU Make`工具。可以通过执行本站提供的<a href="scripts/x_pack_windows_build_tools_download.bat" target="_blank">x_pack_windows_build_tools_download自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\tools\build`目录
 
 **<font color='red'>注意：通过本站提供的下载程序下载`GNU Make`，需要先安装`git for windows`工具，并加入环境变量。</font>**
 
 #### 中文语言包安装与语言切换
 
-为了更直观地向中文用户介绍`HUAWEI LiteOS Studio`，本文档所用`HUAWEI LiteOS Studio`安装了中文语言包扩展`vscode-language-pack-zh-hans`。当前用户能够获取的`HUAWEI LiteOS Studio`默认不预置中文语言包，因此界面默认显示为英文，如需要中文语言包，可以通过执行本站提供的<a href="/scripts/extension_download.bat" target="_blank">语言包自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\extensions\extension-collections`目录，可参考[扩展安装](/extension?id=扩展安装)完成安装。
+为了更直观地向中文用户介绍`HUAWEI LiteOS Studio`，本文档所用`HUAWEI LiteOS Studio`安装了中文语言包扩展`vscode-language-pack-zh-hans`。当前用户能够获取的`HUAWEI LiteOS Studio`默认不预置中文语言包，因此界面默认显示为英文，如需要中文语言包，可以通过执行本站提供的<a href="scripts/extension_download.bat" target="_blank">语言包自动下载程序</a>来进行下载，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\extensions\extension-collections`目录，可参考[扩展安装](/extension?id=扩展安装)完成安装。
 
 **<font color='red'>注意：通过本站提供的下载程序下载`中文语言包`，需要先安装`git for windows`工具，并加入环境变量。</font>**
 
