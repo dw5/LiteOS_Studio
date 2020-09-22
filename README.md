@@ -5,7 +5,7 @@ LiteOS Studio是基于LiteOS轻量级操作系统开发的工具。它提供了�
 
 <h2>LiteOS Studio工具下载</h2>
 
-目前该版本Beta试用阶段，签约客户可以联系技术支持获取版本。
+最新的`LiteOS Studio`版本为V1.45.1，访问[下载页面](https://gitee.com/LiteOS/LiteOS_Studio/releases/V1.45.1)进行下载。
 
 <h2>LiteOS Studio 使用手册</h2>
 
