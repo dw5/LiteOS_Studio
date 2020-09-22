@@ -1,54 +1,58 @@
+<!-- markdownlint-disable MD033 MD041-->
 <p align="center">
-  <h1 align="center">高效率使用VSCode</h1>
+  <h1 align="center">Windows常用快捷操作</h1>
 </p>
 
-LiteOS Studio基于VSCode开发，本章介绍一些VSCode使用技巧。
+LiteOS Studio基于VSCode开发，本章节介绍Windows下的一些常用使用技巧。
 
-### 常用快捷操作
+## 常用快捷操作-搜索
 
-常用的快捷操作。
+### 全局搜索
 
+`Ctrl + Shift + F` 全局搜索
 
-#### 全局搜索
+### 搜索文件名
 
-Windows: Ctrl + Shift + F 全局搜索
+`Ctrl + P` 搜索文件名称
 
-#### 搜索文件名
+### 搜索符号
 
-Windows: Ctrl + P 搜索文件名称
+`Ctrl + T`  搜索符号、函数名称等
 
-#### 搜索符号
+## 常用快捷操作-文件操作
 
-Windows: Ctrl + T  搜索符号、函数名称等
+### 前进返回
 
-#### 打开集成终端
+`Alt + LeftArrow`、 `Alt + RightArrow` 在打开的文件、设置项间切换
 
-Windows: Ctrl + \` 集成命令行终端窗口
+### 关闭文件
 
-#### 前进返回
+`Ctrl + W`  关闭编辑器中当前打开的文件、设置项
 
-Windows: Alt+LeftArrow， Alt RightArrow 在打开的文件间切换
+### 打开关闭的文件
 
-#### 文件头尾跳转
+`Ctrl + Shift + T` 重新打开关闭的文件、设置项
 
-Windows: Ctrl + Home、Ctrl+End快速跳转文件头部、尾部
+### 文件头尾跳转
 
-#### 删除一行
+`Ctrl + Home`、`Ctrl + End` 快速跳转文件头部、尾部
 
-Windows: Ctrl + x  快速删除一行
+## 常用快捷操作-代码编辑
 
-#### 复制一行
+### 删除一行
 
-Windows: Shift + Alt +UpArrow，Shift + Alt +DownArrow 向上、向下复制一行
+`Ctrl + X`  快速删除一行
 
-#### 移动一行
+### 复制一行
 
-Windows: Alt + UpArrow，Alt + DownArrow向上、向下移动位置
+`Shift + Alt + UpArrow`、`Shift + Alt + DownArrow` 向上、向下复制一行
 
-#### 关闭文件
+### 移动一行
 
-Windows: Ctrl + w  关闭当前打开的文件
+`Alt + UpArrow`、`Alt + DownArrow` 向上、向下移动位置
 
-#### 打开关闭的文件
+## 常用快捷操作-其他
 
-Windows: Ctrl + Shift + T 重新打开关闭的文件
+### 打开集成终端
+
+<code>Ctrl + `</code> 集成命令行终端窗口

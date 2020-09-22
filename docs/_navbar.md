@@ -13,4 +13,4 @@
     
 * [发行说明](/updates/README.md)
 
-* [Beta测试中](/)
+* [下载软件](https://gitee.com/LiteOS/LiteOS_Studio/releases/V1.45.1)
