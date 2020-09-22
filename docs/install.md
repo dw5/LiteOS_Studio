@@ -45,7 +45,7 @@
 
 #### 安装Git工具
 
-如果用户需要使用新建工程功能下载SDK， 则应根据情况安装`git for windows`工具。 从<a href="https://gitforwindows.org/" target="_blank">`https://gitforwindows.org/`</a>下载，并按安装向导完成最新版`git for windows`的安装。
+如果用户需要使用新建工程功能下载SDK， 则应根据情况安装`git for windows`工具。 从<a href="https://gitforwindows.org/" target="_blank">`https://gitforwindows.org/`</a>下载，并按安装向导完成最新版`git for windows`的安装。也可以使用华为云镜像站点下载<a href="https://mirrors.huaweicloud.com/git-for-windows/" target="_blank">`https://mirrors.huaweicloud.com/git-for-windows/`</a>。
 
 #### 安装arm-none-eabi软件
 
