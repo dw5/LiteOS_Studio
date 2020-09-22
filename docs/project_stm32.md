@@ -257,7 +257,7 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 
 #### STLinkReflash 刷JLINK固件
 
-确保已安装`ST-LINK USB Drivers`和`J-Link`软件。 官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="/release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。
+确保已安装`ST-LINK USB Drivers`和`J-Link`软件。 官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。
 
 **步骤 1** 接受许可Accept
 
