@@ -13,7 +13,7 @@
 [使用文档](/README)
 [工程示例](project_stm32.md)
 [技术支持](https://gitee.com/LiteOS/LiteOS_Studio/issues)
-[Beta测试中](/)
+[下载软件](https://gitee.com/LiteOS/LiteOS_Studio/releases/V1.45.1)
 
 <!-- 背景色 -->
 

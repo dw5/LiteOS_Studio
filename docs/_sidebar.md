@@ -1,6 +1,7 @@
+<!-- markdownlint-disable MD033 MD041-->
 - 快速开始
-
-  - [HUAWEI LiteOS Studio安装](README.md)
+  - [HUAWEI LiteOS Studio简介](/README)
+  - [HUAWEI LiteOS Studio安装](/install.md)
   - [HUAWEI LiteOS Studio界面介绍](introduction.md)
   - [HUAWEI LiteOS Studio扩展介绍](extension.md)
 
@@ -13,6 +14,5 @@
 
   - [调测工具](debugTools.md)  
 
-- [高效率使用VSCode](studio_usage.md)
+- [Windows常用快捷操作](studio_usage.md)
 - [常见问题](studio_qa.md)
-
