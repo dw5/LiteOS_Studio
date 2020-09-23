@@ -10,9 +10,5 @@
   - [STM32工程示例](project_stm32.md)
   - [Hi3861V100 WiFi IoT工程示例](project_wifiiot.md)
   
-- 调测工具
-
-  - [调测工具](debugTools.md)  
-
 - [Windows常用快捷操作](studio_usage.md)
 - [常见问题](studio_qa.md)
