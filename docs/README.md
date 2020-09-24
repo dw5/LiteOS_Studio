@@ -3,9 +3,7 @@
   <h1 align="center">HUAWEI LiteOS Studio简介</h1>
 </p>
 
-`HUAWEI LiteOS Studio`是以`Visual Studio Code`的社区开源代码为基础，根据`C`编程语言特点、`LiteOS`嵌入式系统软件的业务场景，定制开发的一款轻量
-
-级集成开发环境解决方案。它提供了代码编辑、编译、烧录、调试等能力。
+`HUAWEI LiteOS Studio`是以`Visual Studio Code`的社区开源代码为基础，根据`C`编程语言特点、`LiteOS`嵌入式系统软件的业务场景，定制开发的一款轻量级集成开发环境解决方案。它提供了代码编辑、编译、烧录、调试等能力。
 
 <!-- _sidebar.md -->
 - 快速开始
