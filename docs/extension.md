@@ -8,7 +8,7 @@
 由于不同的开发板的编译、烧录、调测方式差异较大，`HUAWEI LiteOS Studio`通过不同的扩展来灵活支持各种目标开发板。`HUAWEI LiteOS Studio`扩展主要包含`LiteOS Studio Base基座扩展`和
 为不同的开发板定制的扩展，如`STM32`开发板扩展、`WiFi IoT Hi3861`开发板扩展。为实现`GDB`图形化调测能力，还提供了`LiteOS Studio Debug`调测扩展。在`HUAWEI LiteOS Studio`集成开发环境中已经预置了基座扩展，调测扩展，和部分开发板扩展。如果用户使用VSCode、或其他基于VSCode的定制`IDE`，也可以通过安装`HUAWEI LiteOS Studio`扩展来实现`HUAWEI LiteOS Studio`相同的能力。
 
-各个扩展的安装文件后缀为`.vsix`， 访问[LiteOS Studio Extensions](https://gitee.com/LiteOS/LiteOS_Studio/extensions)可以下载扩展安装文件。
+各个扩展的安装文件后缀为`.vsix`， 访问[LiteOS Studio Extensions](https://gitee.com/LiteOS/LiteOS_Studio/releases)可以下载扩展安装文件。
 
 #### 扩展安装
 
