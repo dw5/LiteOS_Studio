@@ -139,7 +139,7 @@
 
 * 手动配置脚本有两种方式可以配置：
   - 方式一：点击文件夹图标![avatar](images/browserFoler.png)浏览目录自行配置。
-  - 方式一：在`Makefile`或`SConstruct`文件上按照`单击右键->设置为MakeFile/SConstruct文件`步骤完成设置，设置完成后会自动在编译脚本路径配置框中填入脚本路径，如下图所示：
+  - 方式二：在`Makefile`或`SConstruct`文件上按照`单击右键->设置为MakeFile/SConstruct文件`步骤完成设置，设置完成后会自动在编译脚本路径配置框中填入脚本路径，如下图所示：
 
     ![avatar](images/compilerConfig.png)
 
