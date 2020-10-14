@@ -102,7 +102,8 @@
 
 **步骤 4** `烧录文件`设置，可以通过手动和自动两种方式设置文件：
 - 手动设置：点击`烧录文件`后的图标![avatar](images/browserFoler.png)或者使用下图所示方式选择烧录文件
-![avatar](images/stm/stm_setBurner.png)
+
+   ![avatar](images/stm/stm_setBurner.png)
 
 - 自动设置：点击下拉菜单选择自动匹配的烧录文件
 
@@ -177,7 +178,8 @@
 添加断点有两种方式：
 - 方式一：将鼠标放在代码行号处，行号前面会出现红色圆点，单击圆点将这一行添加为断点。
 - 方式二：点击右键`添加断点`、`添加条件断点`、`添加记录点`。
-![avatar](images/stm/breakpoints.png)
+
+   ![avatar](images/stm/breakpoints.png)
 
 右键可以对添加的断点做删除、编辑、禁用操作。
 
@@ -209,7 +211,8 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 `反汇编&内存`支持如下两种反汇编方式：
 
 - **反汇编指定函数**  点击反汇编指定函数，在弹出的窗口中输入想要反汇编的函数名，回车后就可以在代码区中看到这个函数的反汇编代码。
-![avatar](images/stm/dissasm_1.png)
+
+   ![avatar](images/stm/dissasm_1.png)
 
 - **反汇编当前函数**  点击反汇编当前函数，就可以在代码区中展示当前函数的反汇编代码。
 
@@ -231,7 +234,7 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 
 #### STLinkReflash 刷JLINK固件
 
-官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="/release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。解压`STLinkReflash.zip`，双击`STLinkReflash.exe`运行。
+官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="https://gitee.com/LiteOS/LiteOS_Studio/blob/master/docs/release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。解压`STLinkReflash.zip`，双击`STLinkReflash.exe`运行。
 
 **步骤 1** 接受许可Accept
 
