@@ -101,7 +101,7 @@
 **<font color='red'>注意：如果用户安装的`JLink`目录不是Studio默认填入的`C:\Program Files (x86)\SEGGER\JLink`，请根据实际安装目录进行填写。</font><bont>**
 
 **步骤 4** `烧录文件`设置，可以通过手动和自动两种方式设置文件：
-- 手动设置：点击`烧录文件`后的图标![avatar](images/browserFoler.png)或者使用下图所示方式选择烧录文件
+- 手动设置：点击`烧录文件`后的图标![avatar](images/browserFoler.png)或者在左侧工程树的烧录文件上`单击右键->设置为烧录文件`进行设置，如下图所示：
 
    ![avatar](images/stm/stm_setBurner.png)
 
@@ -166,12 +166,19 @@
 ![avatar](images/stm/debuggingView.png)
 
 - **变量**           展示局部变量、全局变量、静态变量
+
 - **监视**           监视指定的表达式
+
 - **调用堆栈**       展示当前运行状态和暂停状态的任务调用堆栈
+
 - **断点**           展示设置的断点
+
 - **寄存器**         查看各个寄存器的数值，支持复制数值操作
+
 - **反汇编 & 内存**  支持对函数进行反汇编，支持查看内存操作
+
 - **输出**           展示`GDB`客户端的输出日志
+
 - **调试控制台**     展示`GDB Server`的输出日志
 
 #### 调试器-断点
@@ -204,17 +211,19 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 
 #### 调试器-反汇编
 
-单步调测时，在`调试面板-反汇编&内存`视图中，可以查看对应源代码的反汇编代码，反汇编文件展示效果如下：
+单步调测时，在`调试面板-反汇编&内存`视图中，可以查看对应源代码的反汇编代码，支持如下两种方式：
 
-![avatar](images/stm/dissasm_2.png)
-
-`反汇编&内存`支持如下两种反汇编方式：
+![avatar](images/hi3861/dissasm_0.png)
 
 - **反汇编指定函数**  点击反汇编指定函数，在弹出的窗口中输入想要反汇编的函数名，回车后就可以在代码区中看到这个函数的反汇编代码。
 
    ![avatar](images/stm/dissasm_1.png)
 
 - **反汇编当前函数**  点击反汇编当前函数，就可以在代码区中展示当前函数的反汇编代码。
+
+反汇编文件展示效果如下：
+
+![avatar](images/stm/dissasm_2.png)
 
 #### 调试器-查看内存
 
@@ -234,7 +243,7 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 
 #### STLinkReflash 刷JLINK固件
 
-官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="https://gitee.com/LiteOS/LiteOS_Studio/blob/master/docs/release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。解压`STLinkReflash.zip`，双击`STLinkReflash.exe`运行。
+官方站点下载<a href="https://www.segger.com/downloads/jlink#STLink_Reflash" target="_blank">`ST-Link Reflash Utility`</a>，或<a href="/release/STLinkReflash_190812.zip" target="_blank">本站下载</a>。解压`STLinkReflash.zip`，双击`STLinkReflash.exe`运行。
 
 **步骤 1** 接受许可Accept
 
