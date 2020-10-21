@@ -1,5 +1,5 @@
 cd /d %USERPROFILE%\.huawei-liteos-studio\tools
-REM "if proxy is needed,please delete 'REM' on line 4-8,and input username, password, server on line 4-6"
+REM "if proxy is needed,please delete 'REM' on lines below(NOTICE: EXCEPT THIS LINE) and input username, password(if spical character included, use escape character), server on line 3-5"
 REM set username=
 REM set password=
 REM set server=
