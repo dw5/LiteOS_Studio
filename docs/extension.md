@@ -10,7 +10,7 @@
 
 在`HUAWEI LiteOS Studio`集成开发环境中已经预置了基座扩展，调测扩展，和部分开发板扩展。如果用户使用VSCode或其他基于VSCode的定制`IDE`，也可以通过安装`HUAWEI LiteOS Studio`扩展来实现`HUAWEI LiteOS Studio`相同的能力。
 
-各个扩展的安装文件后缀为`.vsix`， 可以访问[LiteOS Studio Extensions](https://gitee.com/LiteOS/LiteOS_Studio/extensions)下载。
+各个扩展的安装文件后缀为`.vsix`， 可以访问[LiteOS Studio Extensions](https://gitee.com/LiteOS/LiteOS_Studio/releases/V1.45.1)下载。
 
 ### 扩展安装
 
