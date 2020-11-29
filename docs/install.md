@@ -68,13 +68,11 @@
 
 建议将`JLink.exe`所在目录加入`PATH`环境变量。
 
-#### 中文语言包与C/C++扩展安装
+#### 中文语言包安装
 
 为了更直观地向中文用户介绍`HUAWEI LiteOS Studio`，本文档所用`HUAWEI LiteOS Studio`安装了中文语言包扩展`vscode-language-pack-zh-hans`。当前用户能够获取的`HUAWEI LiteOS Studio`默认不预置中文语言包，因此界面默认显示为英文。
 
-C/C++扩展能够提供`HUAWEI LiteOS Studio`对C/C++语言的支持，包括了C/C++语言代码高亮、转到定义等功能。
-
-用户可以通过执行本站提供的<a href="scripts/extension_download.bat" download>扩展自动下载程序</a>下载中文语言包和C/C++扩展，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\extensions\extension-collections`目录，可参考[扩展安装](/extension?id=扩展安装)完成安装。
+用户可以通过执行本站提供的<a href="scripts/extension_download.bat" download>扩展自动下载程序</a>下载中文语言包扩展，默认下载到`C:\Users\<UserName>\.huawei-liteos-studio\extensions\extension-collections`目录，可参考[扩展安装](/extension?id=扩展安装)完成安装。
 
 **<font color='red'>注意：通过本站提供的下载程序下载`中文语言包`，需要先安装`git for windows`工具，并加入环境变量。</font>**
 

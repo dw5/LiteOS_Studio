@@ -61,6 +61,10 @@ pip install scons
 
 请<a href="https://gitee.com/LiteOS/LiteOS_Studio/issues" target="_blank">联系我们</a>获取 `WiFi IoT SDK`，解压到本地工作目录。
 
+#### 安装OpenOCD软件
+
+请联系我们获取适配`WiFi IoT`开发板的`OpenOCD`软件， 解压放到本地工作目录。
+
 ### 使用入门
 
 演示如何新建工程、编译、烧录、串口调试等功能。
@@ -81,11 +85,13 @@ pip install scons
 
 **步骤 5**  `工程参考`中可以填入本地路径，也可以填入远程gitee地址。使用远程gitee下载的方式时，需要联网，确保可以访问[润和 HiHope社区](https://gitee.com/hihopeorg)。如果联网需要代理，请提前配置好代理，否则新建工程会失败。配置代理方法参考[常见问题](/studio_qa?id=新建工程失败问题)。同时，需要确保本地已安装`git for windows`工具。
 
-填入远程gitee地址时，需要填入标签或分支的完整地址，例如`https://gitee.com/hihopeorg/HiSpark-WiFi-IoT-DevKit/tree/HiSpark_WiFi-IoT_VER_A_Hi3861_Dev_Kit_SPC021_V1.0.1`（DevKit案例）或`https://gitee.com/hihopeorg/HiSpark-WiFi-IoT-OC/tree/HiSpark_WiFi-IoT_VER_A_Hi3861_OC_Kit_SPC021_V1.0.1`（OC案例）
+**<font color='red'>注意：由于润和社区为私有仓库，用户需要确保个人gitee账号已被润和社区加入仓库成员，才能通过远程下载方式新建工程，否则，请通过其他途径获取压缩包至本地，通过打开工程方式使用。</font>**
+
+填入远程gitee地址时，需要填入标签或分支的完整地址，同时，在地址中加入gitee账号与密码，例如`https://%username%:%password%@gitee.com/hihopeorg/HiSpark-WiFi-IoT-DevKit/tree/HiSpark_WiFi-IoT_VER_A_Hi3861_Dev_Kit_SPC021_V1.0.1`（DevKit案例）或`https://%username%:%password%@gitee.com/hihopeorg/HiSpark-WiFi-IoT-OC/tree/HiSpark_WiFi-IoT_VER_A_Hi3861_OC_Kit_SPC021_V1.0.1`（OC案例）
 
 **步骤 6**  在开发板信息表点选开发板所在行，目前默认提供`Hi3861V100`开发板
 
-点击`确认`按钮后可能会弹出对话框，让填写gitee的账号和密码，提交后，后台会下载并保存所选目标板的SDK，等待下载完成后会在一个新窗口中自动打开带有工程参考的新建工程。
+点击`确认`按钮后，后台会下载并保存所选目标板的SDK，等待下载完成后会在一个新窗口中自动打开带有工程参考的新建工程。
 
 ![avatar](images/create3861-2.png)
 
@@ -221,6 +227,42 @@ pip install scons
 
 ![avatar](images/burn-succ3.png)
 
+#### 烧录配置-OpenOCD烧录
+
+`WiFi IoT`开发板现已支持`OpenOCD`烧录，首先需要保证`WiFi IoT`开发板连接正常，拨码开关全部远离`ON`，使用获取的`openocd`根目录下的`drivers\zadig-2.4.exe`工具，点击`Options->List All Devices`并将`Dual RS232`转化为`WinUSB`
+
+**步骤 1**   点击工程配置界面上的`烧录器`
+
+![avatar](images/burner-openocd.png)
+
+**步骤 2**   `烧录方式`选择`OpenOCD`
+
+**步骤 3**   `烧录器目录`已提供默认路径， 用户可以将`OpenOCD`烧录器安装到该路径下，也可以自行指定路径安装后，点击图标![avatar](images/browserFoler.png)填入`openocd.exe`所在路径
+
+**步骤 4**   当前支持两线与五线的`OpenOCD`烧录、调测方法，通过在`interface目录`、`target目录`下拉菜单中选择不同的文件来切换两线与五线方式
+
+五线烧录配置：`interface目录`下拉菜单中选择`scripts\interface\Hi-ft2232d-ftdi-swd.cfg`,`target目录`下拉菜单中选择`scripts\target\Hi3861-RISCV\Hi3861-RISCV-JTAG`，开发板上第一第二个跳帽连接到1、2，第三个跳帽盖上。
+
+两线烧录配置：`interface目录`下拉菜单中选择`scripts\interface\Hi-ft2232d-ftdi.cfg`,`target目录`下拉菜单中选择`scripts\target\Hi3861-RISCV\Hi3861-RISCV-SWD-CORESIGHT`，开发板上第一第二个跳帽，连接到2、3，第三个跳帽去掉。
+
+**步骤 5**   点击`烧录文件`后的图标 ![avatar](images/browserFoler.png) 浏览选择编译生成的BIN文件， 也可以选中要烧录的文件，右键->设置为烧录文件，如下图所示
+
+ ![avatar](images/setBurner.png)
+
+在编译过程中会自动识别出编译输出件`bin、hex、fwpkg`， 在`烧录文件`下拉选择框， 选择烧录文件`Hi3861_demo_burn.bin`：
+
+ ![avatar](images/setBurner_dropdown_openocd.png)
+
+**步骤 6**   `加载地址`使用默认值`0x400000`。
+
+**步骤 7**   配置好后点击![avatar](images/confirm.png)进行保存
+
+**步骤 8**   点击工具栏上的图标![avatar](images/burn.png)进行烧录
+
+在`终端`窗口输出烧录进度， 烧录成功的截图如下：
+
+![avatar](images/burn-succ4.png)
+
 #### 调试器-执行调试
 
 `HUAWEI LiteOS Studio` 调测配置非常简单，只需要几步，即可支持`WiFi-IoT` 图形化单步调试。由于`WiFi IoT`的`ROM`、封库特性，有些源码无法单步调测。对于没有对应源代码的文件，可以使用反汇编文件进行展示。
@@ -327,6 +369,42 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 查看内存展示效果如下：
 
 ![avatar](images/hi3861/viewmemory.png)
+
+#### 调试器-OpenOCD调试
+
+`HUAWEI LiteOS Studio`支持`OpenOCD`调试方法，调试配置步骤如下：
+
+**步骤 1**   点击工程配置界面上的`调试器`
+
+![avatar](images/debuggerConfig2.png)
+
+**步骤 2**   `调试器`选择`OpenOCD`
+
+**步骤 3**   `interface目录`、`target目录`的配置与上文`OpenOCD`烧录配置相同
+
+**步骤 4**   `调试器目录`配置与上文`OpenOCD`烧录器目录配置相同
+
+**步骤 5**   `GDB目录`可以默认， 或者自行指定
+
+**步骤 6**   `可执行文件路径`选择输出目录下的`.out`文件， 可在编译后从下拉菜单点选， 或者自行指定
+
+**步骤 7**   `调试配置`根据需要， 选择`复位调试`或`附加调试`
+
+***`复位调试`*** 会自动重启开发板， 并停止在main函数
+
+***`附加调试`*** 不重启开发板， 附加到当前运行代码行
+
+配置好后点击确认按钮![avatar](images/confirm.png)进行保存
+
+**步骤 8**   在`HUAWEI LiteOS Studio`左侧的活动栏点击`运行`视图， 可以看到默认已经配置好调试配置`Openocd Debug`， 点击绿色三角按钮， 开始调试
+
+![avatar](images/hi3861/debuggerView2.png)
+
+**步骤 9**   调试界面如下：
+
+![avatar](images/hi3861/debuggingView2.png)
+
+`OpenOCD`调试界面其余功能与`JLink`调测相同
 
 ### 炫彩灯工程案例
 

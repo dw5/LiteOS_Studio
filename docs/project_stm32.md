@@ -7,7 +7,13 @@
 
 ### 搭建Windows开发环境
 
-用户需要根据实际情况，安装`git for windows`工具、`GNU Arm Embedded Toolchain`编译交叉工具链、`Make.exe`构建工具、`JLink`仿真器。如果用户使用`OpenOCD`烧录，还需要安装`OpenOCD`烧录工具。
+`STM32`工程使用`Makefile`进行构建管理， 需要安装`Python`和`Kconfiglib`库、`Make.exe`构建工具， 推荐`Python 3.7`以上版本。
+
+`STM32`工程使用`GNU Arm Embedded Toolchain`编译交叉工具链，使用`JLink`仿真器。
+
+如果使用`OpenOCD`烧录，还需要安装`OpenOCD`烧录工具。
+
+如果需要新建工程，还应该安装`git for windows`工具。
 
 对于一些`STM32`开发板，用户可能还需要安装USB转串口驱动。
 
@@ -15,13 +21,13 @@
 
 如果用户需要使用新建工程功能下载开源工程SDK，则应根据情况安装`git for windows`工具，可参考[安装Git工具](/install?id=安装Git工具)。
 
-#### 安装GNU Arm Embedded Toolchain软件
-
-<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`ARM GCC`编译器进行编译，需要安装编译器软件，可参考[安装arm-none-eabi软件](/install?id=安装arm-none-eabi软件)。
-
 #### 安装GNU Make等构建软件
 
 <a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`Makefile`文件组织编译和链接程序，需要安装`GNU Make`工具，可参考[安装Make构建软件](/install?id=安装Make构建软件)。
+
+#### 安装GNU Arm Embedded Toolchain软件
+
+<a href="https://gitee.com/LiteOS/LiteOS" target="_blank">`开源LiteOS`</a>工程使用`ARM GCC`编译器进行编译，需要安装编译器软件，可参考[安装arm-none-eabi软件](/install?id=安装arm-none-eabi软件)。
 
 #### 安装JLink仿真器软件
 
@@ -44,11 +50,11 @@
 
 **步骤 3**  选择SDK版本号，当前STM32工程被维护在`https://gitee.com/`，支持最新版本`master`分支
 
-**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F103ZE`、`STM32F429IG`、`STM32L431RC`、`STM32F769NI`四种开发板
+**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F429IG`、`STM32L431RC`、`STM32F769NI`三种开发板
 
 点击`确认`按钮，后台将下载并保存所选目标板的SDK，等待下载完成后会在一个新窗口中自动打开新建的工程。
 
-![avatar](images/create429.png)
+![avatar](images/newProject.png)
 
 #### 打开工程
 
@@ -62,6 +68,12 @@
 
 ![avatar](images/stm/stm_confirm.png)
 
+#### 组件配置-组件使能与属性修改(可选)
+
+如需对LiteOS开放可配置的组件与属性进行使能，而不是仅使用默认的配置，用户可以点击工程配置界面上的`组件配置`，在左侧的`选择组件`中点击想要使能或修改的组件，在右侧的`组件属性`栏勾选需要使能的组件，或更改组件属性值，点击确认按钮![avatar](images/confirm.png)保存。
+
+![avatar](images/stm/componentConfig.png)
+
 #### 编译配置-编译代码
 
 **步骤 1** 点击工程配置界面上的`编译器`
@@ -74,11 +86,13 @@
 
 **步骤 4** `Make构建器`用户需要自行下载`Make.exe构建工具`，已提供默认路径。通过本站提供的自动下载程序，`Make.exe构建工具`就会安装到该路径下。用户也可自行指定安装目录，点击图标![avatar](images/browserFoler.png)设置为`make.exe`所在路径
 
-**步骤 5** `Makefile脚本`路径需要用户自行填入，对于STM32工程，通常在`工程根目录`下的`Makefile`文件上`点击右键->设置为Makefile文件`，或点击图标![avatar](images/browserFoler.png)进行自定义设置，也可使用![avatar](images/findScript.png)按钮自动搜索脚本文件
+**步骤 5** `Makefile脚本`路径已填入默认值，用户也可以自行更改。对于STM32工程，在`工程根目录`下的`Makefile`文件上`点击右键->设置为Makefile文件`，或点击图标![avatar](images/browserFoler.png)进行自定义设置，也可使用![avatar](images/findScript.png)按钮自动搜索脚本文件
 
-**步骤 6** 配置好后点击确认按钮![avatar](images/confirm.png)进行保存
+**步骤 6** `Make参数`已填入默认值，用户也可自行修改，编译`STM32`工程时若发现概率性编译失败的问题，可尝试修改参数为`-j 12`
 
-**步骤 7** 点击工具栏上的编译图标![avatar](images/compile.png) 开始编译，也可以点击重新构建图标![avatar](images/recompile.png) 进行清理和重新编译
+**步骤 7** 配置好后点击确认按钮![avatar](images/confirm.png)进行保存
+
+**步骤 8** 点击工具栏上的编译图标![avatar](images/compile.png) 开始编译，也可以点击重新构建图标![avatar](images/recompile.png) 进行清理和重新编译
 
 编译成功的截图示例如下：
 
@@ -109,19 +123,7 @@
 
 **步骤 5** `连接方式`、`连接速率`、`加载地址`等保持默认，或根据开发板进行调整。配置好后点击确认按钮![avatar](images/confirm.png)保存
 
-**步骤 6** 点击工程配置界面上的`串口配置`
-
-![avatar](images/serialConfig.png)
-
-**步骤 7** 根据实际情况设置`端口`，比如下图使用的`USB`转串口的端口为`19`:
-
-![avatar](images/stm/stm_serialPorts.png)
-
-**步骤 8** 设置`波特率`为`921600`， `数据位`、`停止位`、`奇偶`、`流控`保持默认即可
-
-**步骤 9** 配置好后点击确认按钮![avatar](images/confirm.png)保存
-
-**步骤 10** 点击工具栏上的图标![avatar](images/burn.png)进行烧录
+**步骤 6** 点击工具栏上的图标![avatar](images/burn.png)进行烧录
 
 烧录成功的截图如下：
 
@@ -274,3 +276,33 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 正常执行调测，如图：
 
 ![avatar](images/stm/st-jlink-debugging.png)
+
+### JLink远程烧录、调测
+
+#### 环境准备
+
+服务器端和客户端均需要安装`JLink`软件，且保持网络畅通
+
+#### 启动JLink远程服务器
+
+拥有开发板的一方，连接开发板，在JLink安装目录下，手动启动`JLinkRemoteServer.exe`应用程序，进行如下设置，即可等待用户连入：
+
+![avatar](images/stm/jlink_remote_server_1.png)
+
+![avatar](images/stm/jlink_remote_server_2.png)
+
+#### 使用HUAWEI LiteOS Studio远程烧录
+
+无开发板的一方，在编译生成烧录文件后，打开`工程配置`->`烧录器`,选择`JLink`烧录方式，选择端口为`IP`，并填入`远程JLink地址`，`远程JLink地址`填写远程服务器IPv4地址
+
+![avatar](images/stm/jlink_remote_burnner.png)
+
+烧录器界面配置完成后点击确认按钮，再点击工具栏上的烧录按钮即可执行远程烧录任务
+
+#### 使用HUAWEI LiteOS Studio远程调试
+
+同上，打开`工程配置`->`调试器`,选择`JLink`调试方式，选择端口为`IP`，并填入`远程JLink地址`，`远程JLink地址`填写远程服务器IPv4地址
+
+![avatar](images/stm/jlink_remote_debugger.png)
+
+同样，完成配置并确认后，点击调试按钮执行远程调试任务
