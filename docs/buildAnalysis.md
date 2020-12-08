@@ -20,27 +20,46 @@ LiteOS Studio对构建出的elf文件进行内存占用分析，支持LiteOS开�
 ![avatar](images/buildAnalysis/buildAnalysisConfig.png)
 
 ### 3、镜像分析页面介绍
-如果在调测工具中点击镜像分析时没有选择Map文件或者镜像分析依赖的Map文件中内存区域的数据为空时，进入镜像分析页面只有一个详细信息页签，否则有内存区域和详细信息两个页签。
-
-![avatar](images/buildAnalysis/buildAnalysisPage2.png)
-![avatar](images/buildAnalysis/buildAnalysisPage1.png)
+镜像分析页面包括内存区域、详细信息、文件大小和模块大小。
 
 #### 内存区域
 内存区域包括每个内存区域数据的一个表格，包含了起始地址和结束地址以及内存占用。
 表格下面默认显示内存占比最高的前三个区域内容。
+
+![avatar](images/buildAnalysis/buildAnalysisRegions.png)
+
 点击不同的行会在下面仪表盘中显示点击行的数据。
 
-![avatar](images/buildAnalysis/buildAnalysisPage3.png)
-![avatar](images/buildAnalysis/buildAnalysisPage4.png)
+![avatar](images/buildAnalysis/buildAnalysisRegions1.png)
 
 #### 详细信息
 详细信息里显示了Section和Symbol的信息。通过树表格展示层级关系，名称，VMA和LMA。双击Symbol子节点会跳转到具体的代码行号。
 
-页面也支持搜索Name定位到具体的行，然后通过键盘Enter键跳转到下一个符合搜索条件的行。
+![avatar](images/buildAnalysis/buildAnalysisDetails.png)
 
-![avatar](images/buildAnalysis/buildAnalysisPage5.png)
+页面也支持搜索Name定位到具体的行，然后通过键盘Enter键跳转到下一个符合搜索条件的行，点击![avatar](images/buildAnalysis/buildAnalysisRegExp.png)可以开启支持正则搜索。
 
+![avatar](images/buildAnalysis/buildAnalysisDetails1.png)
 
 同时，点击表头的每列会对该列数据进行排序。
 
-![avatar](images/buildAnalysis/buildAnalysisPage6.png)
+![avatar](images/buildAnalysis/buildAnalysisDetails2.png)
+
+#### 文件大小
+文件大小里展示了文件和文件层级的大小以及总数，点击表头会对该列数据进行排序。
+
+![avatar](images/buildAnalysis/buildAnalysisFile.png)
+
+表格除了File Name和Rom Size以外其他的列，都是动态变化的。
+
+![avatar](images/buildAnalysis/buildAnalysisFile1.png)
+
+#### 模块大小
+模块大小里展示了文件和文件层级的大小以及总数，点击表头会对该列数据进行排序。
+
+![avatar](images/buildAnalysis/buildAnalysisModule.png)
+
+类似文件大小，模块大小表格除了File Name和Rom Size以外其他的列，也都是动态变化的。下面展示的饼图显示父节点和子节点的数据情况，如果不存在子节点，就只显示父节点的图；如果存在子节点，左侧图是父节点，右侧图是子节点。
+
+![avatar](images/buildAnalysis/buildAnalysisModule1.png)
+

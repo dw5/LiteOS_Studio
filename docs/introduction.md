@@ -160,7 +160,7 @@
 #### 烧录器界面介绍
 点击工程配置页面左侧的`烧录器`选项进入烧录器界面。
 
-**烧录方式：** `烧录方式`下拉菜单目前支持`JLink`、`HiBurner`、`OpenOCD`三种烧录器，默认已经配好，如无额外需求不需要用户配置。
+**烧录方式：** `烧录方式`下拉菜单目前支持`JLink`、`HiBurner`、`OpenOCD`三种烧录器，以及`Simulator`仿真器。默认已经配好，如无额外需求不需要用户配置。
 
 **烧录器目录：** `烧录器目录`是用户所使用的烧录器所在目录。
 - HiBurner烧录器目录：`HUAWEI LiteOS Studio`仅预置`HiBurner`烧录器，默认安装在`C：//users/用户名/.huawei-liteos-studio/tools`下，不需要用户自行配置此目录。
@@ -168,6 +168,7 @@
 <a href="https://www.segger.com/downloads/jlink/" target="_blank">`https://www.segger.com/downloads/jlink/`</a>，下载后需要将`JLink.exe`所在目录加入系统的Path环境变量。烧录器目录填写`JLink.exe`所在路径。
 - OpenOCD烧录器目录：`OpenOCD`需要用户自行下载安装，推荐下载地址：
 <a href="https://sourceforge.net/projects/openocd/files/openocd/0.10.0-rc2/" target="_blank">`https://sourceforge.net/projects/openocd/files/openocd/0.10.0-rc2/`</a>，烧录器目录填写`openocd.exe`所在路径。
+- Simulator仿真器目录：`Simulator`为`Qemu`仿真工具，需要用户自行下载安装，推荐下载地址：<a href="https://qemu.weilnetz.de/" target="_blank">`https://qemu.weilnetz.de/`</a>，烧录器目录填写`qemu-system-arm.exe`所在路径
 
 **烧录文件：** `烧录文件`是用户编译生成的文件，目前支持`bin`、`fwpkg`、`hex`三种格式。执行编译后，后台将保存生成的烧录文件（`bin`、`fwpkg`、`hex`后缀的文件），并填入`烧录文件`下拉菜单中供用户点选，用户也可以在`bin`、`fwpkg`或`hex`文件上`单击右键->设置为烧录文件`或点击文件夹图标![avatar](images/browserFoler.png)浏览目录自行配置。
 

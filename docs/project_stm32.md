@@ -3,7 +3,7 @@
   <h1 align="center">STM32工程示例</h1>
 </p>
 
-本节介绍如何使用`HUAWEI LiteOS Studio` 开发`STM32`开发板工程。[开源LiteOS](https://gitee.com/LiteOS/LiteOS)工程，支持`STM32F429IG`、`STM32L431RC`、`STM32F769NI`等`STM32`系列开发板。
+本节介绍如何使用`HUAWEI LiteOS Studio` 开发`STM32`开发板工程。[开源LiteOS](https://gitee.com/LiteOS/LiteOS)工程，支持`STM32F429IG`、`STM32L431RC`、`STM32F769NI`等`STM32`系列开发板，以及支持Qemu仿真的`realview-pbx-a9`开发板。
 
 ### 搭建Windows开发环境
 
@@ -12,6 +12,8 @@
 `STM32`工程使用`GNU Arm Embedded Toolchain`编译交叉工具链，使用`JLink`仿真器。
 
 如果使用`OpenOCD`烧录，还需要安装`OpenOCD`烧录工具。
+
+如果选择`realview-pbx-a9`开发板进行仿真，还需要安装`Qemu`仿真器工具。
 
 如果需要新建工程，还应该安装`git for windows`工具。
 
@@ -33,6 +35,9 @@
 
 如果开发板使用`JLink`仿真器，则应根据情况安装`JLink`软件，可参考[安装JLink仿真器软件](/install?id=安装JLink仿真器软件)。
 
+#### 安装Qemu仿真器软件
+
+如果开发板使用`Qemu`仿真器，则应根据情况安装`Qemu`软件，可访问<a href="https://qemu.weilnetz.de/" target="_blank">`Qemu下载官网`</a>自行下载安装。
 
 ### 使用入门
 
@@ -50,7 +55,7 @@
 
 **步骤 3**  选择SDK版本号，当前STM32工程被维护在`https://gitee.com/`，支持最新版本`master`分支
 
-**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F429IG`、`STM32L431RC`、`STM32F769NI`三种开发板
+**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F429IG`、`STM32L431RC`、`STM32F769NI`、`realview-pbx-a9`四种开发板
 
 点击`确认`按钮，后台将下载并保存所选目标板的SDK，等待下载完成后会在一个新窗口中自动打开新建的工程。
 
@@ -306,3 +311,41 @@ LiteOS作为轻量级物联网操作系统，同时只能运行一个Task任务�
 ![avatar](images/stm/jlink_remote_debugger.png)
 
 同样，完成配置并确认后，点击调试按钮执行远程调试任务
+
+### realview-pbx-a9工程编译、qemu仿真调测流程
+
+#### 环境准备
+
+本地需安装`Qemu`软件，并获取开源工程到本地，或通过`新建工程`建立`realview-pbx-a9`工程
+
+#### realview-pbx-a9工程编译
+
+首先打开本地工程，进入`工程配置`界面，选择`realview-pbx-a9`开发板
+
+![avatar](images/stm/qemu_target.png)
+
+`编译器`配置与`stm32`系列开发板一致，可参照其他`stm32`开发板进行配置
+
+点击编译按钮，执行编译，编译成功截图如下：
+
+![avatar](images/stm/qemu_compile_succ.png)
+
+#### realview-pbx-a9执行qemu仿真
+
+进入`烧录器`界面，`烧录方式`选择`Simulator`，`烧录器目录`选择`qemu-system-arm.exe`所在目录，`烧录文件`选择`out/realview-pbx-a9`目录下的`Huawei_LiteOS.bin`文件，界面配置示例截图如下：
+
+![avatar](images/stm/qemu_burner.png)
+
+点击烧录按钮，执行`qemu`仿真，仿真开启成功后进入交互界面，截图如下：
+
+![avatar](images/stm/qemu_burner_succ.png)
+
+#### realview-pbx-a9调测
+
+进入`调试器`界面，`调试器`选择`Simulator`，`调试器目录`选择`qemu-system-arm.exe`所在目录，GDB目录选择`arm-none-eabi-gdb.exe` `可执行文件路径`选择`out/realview-pbx-a9`目录下的`Huawei_LiteOS.elf`文件，界面配置示例截图如下：
+
+![avatar](images/stm/qemu_debugger.png)
+
+点击烧录按钮，执行`qemu`仿真，仿真开启成功后进入交互界面，截图如下：
+
+![avatar](images/stm/qemu_debugging.png)

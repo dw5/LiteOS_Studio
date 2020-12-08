@@ -46,11 +46,17 @@ LiteOS工程在windows下能够编译，且已经按照用户指南完成HUAWEI 
 
   通常不建议用户将工程保存到带有中文、特殊字符的文件夹下，`HUAWEI LiteOS Studio`暂时不对保存地址进行检查与限制，如果编译路径包含中文、空格等导致编译失败，可手动将工程保存到常规合法路径下。
 
+- **xxx.a文件已存在问题：**
+
+  arm-none-eabi-ar*: unable to rename XXXX.a; reason: File exists, error creating archive
+
+  编译STM32开源工程时，概率性出现，新工程首次编译时出现可能性较高。可能为windows下arm gcc arm-none-eabi-ar本身产生的问题，可删除out目录（手动删除或通过清理编译方法），再尝试编译
+
 ### 烧录失败问题
 
 - **系统版本问题：**
 
-  使用openOCD烧录时，烧录报错`"."不是内部或外部命令，也不是可运行的程序，或批处理文件`，可能由于使用`WINDOWS7`操作系统，系统下没有`powershell`工具导致，可修改默认终端设置，如下图：
+  烧录时，烧录报错`"."不是内部或外部命令，也不是可运行的程序，或批处理文件`，可能由于使用`WINDOWS7`操作系统，系统下没有`powershell`工具导致，可修改默认终端设置，如下图：
 
   ![avatar](images/setTerminal_1.png)
 

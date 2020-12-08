@@ -28,7 +28,7 @@
 
 ### LiteOS Studio STM32扩展
 
-对于[开源LiteOS](https://gitee.com/LiteOS/LiteOS)用户，安装`HUAWEI LiteOS Studio Base`基座扩展和`LiteOS Studio STM32`开发板扩展后，可以利用`IDE`新建`LiteOS STM32`工程， 支持对`STM32系列`开发板工程进行编译、烧录、调试等操作。`LiteOS Studio STM32`扩展支持`Gitee-LiteOS-Master`等`开源 LiteOS SDK` 版本，支持`STM32F429IG`、`STM32F769NI`、`STM32L431RC`等开发板。
+对于[开源LiteOS](https://gitee.com/LiteOS/LiteOS)用户，安装`HUAWEI LiteOS Studio Base`基座扩展和`LiteOS Studio STM32`开发板扩展后，可以利用`IDE`新建`LiteOS STM32`工程， 支持对`STM32系列`开发板工程进行编译、烧录、调试等操作。`LiteOS Studio STM32`扩展支持`Gitee-LiteOS-Master`等`开源 LiteOS SDK` 版本，支持`STM32F429IG`、`STM32F769NI`、`STM32L431RC`、`realview-pbx-a9`等开发板。
 
 ### LiteOS Studio Hi3861扩展
 
