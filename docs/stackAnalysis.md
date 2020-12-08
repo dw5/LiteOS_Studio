@@ -9,20 +9,30 @@
 
 ![avatar](images/stackAnalysis/stackAnalysisConfig.png)
 
-### 2、栈估算相关配置
-栈估算依赖工程的asm文件，需在栈估算结果展示界面指定asm文件路径。配置好asm文件路径后，可点击右边的按钮重新执行栈估算。
+### 2、栈估算入口
+> 打开Liteos Studio工具，点击调测工具里的栈估算tab页签，设置编译器、可执行文件路径等，然后点击确定进入栈估算页面。
+
+![avatar](images/stackAnalysis/stackAnalysisEntry1.png)
+
+> 或者通过打开命令行输入`Stack`找到`Stack Analyzer`点击进入。
+
+![avatar](images/stackAnalysis/stackAnalysisEntry2.png)
+
+### 3、栈估算相关配置
+栈估算依赖工程的asm文件，需要配置asm文件路径。
 
 ![avatar](images/stackAnalysis/stackAnalysisConfig2.png)
 
-如果需要解析函数对应的代码行号，则需要在工程配置中准确配置编译器类型、编译器路径、可执行文件路径，如下图所示。
+如果需要解析函数对应的代码行号，则需要准确配置编译器类型、编译器路径、可执行文件路径（如elf文件、bin文件）。可以在上面调测工具设置界面进行配置，也可以如下图所示在工程配置界面进行配置。
 
 ![avatar](images/stackAnalysis/stackAnalysisConfig3.png)
 ![avatar](images/stackAnalysis/stackAnalysisConfig4.png)
 
-### 3、栈估算入口
-点击工具栏上的栈估算按钮，可以查看栈估算的数据。
+栈估算还支持参数输入，目前仅支持如-sp -t taskentry1 taskentry2，即指定只解析taskentry1和taskentry2这两个任务入口函数。
 
-![avatar](images/stackAnalysis/stackAnalysisEntry.png)
+如果工程源码在linux上，可将工程映射到windows磁盘上，然后进行相关路径配置如下图所示。
+
+![avatar](images/debugToolsSet.png)
 
 ### 4、结果展示
 栈估算结果按函数列表和调用关系展示，如下图所示。

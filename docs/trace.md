@@ -22,11 +22,21 @@ make menuconfig 进入模块配置界面，如下，开启扩展内核下的trac
 
 3.系统默认trace为offline模式
 
+选配启用客户端可视化或控制
+
+![avatar](images/trace/Server/traceClientEn.png)
+
+该选项在离线模式下为可选，在线模式下为必选。
+
 选择trace数据输出方式
 
-![avatar](images/trace/Server/tracePipeline.png)
-
 Trace数据输出方式目前仅支持串口输出，后续可扩展为TCPIP输出、蓝牙输出、JLINK输出等多种方式
+
+选择trace流程控制方式
+
+![avatar](images/trace/Server/traceAgent.png)
+
+可以选择通过shell来控制、通过Trace Agent Task 来控制，或者不控制
 
 #### Trace流程控制
 
@@ -36,11 +46,11 @@ Trace数据输出方式目前仅支持串口输出，后续可扩展为TCPIP输�
 
 2.	在具备shell模块的开发环境中，开启shell, 则可通过shell命令控制trace流程，目前已支持的shell trace命令包括：trace_start 、trace_stop、trace_mask、trace_reset、trace_dump
 
-3.	在无shell模块的开发环境中，注册uart中断回调，也可实现trace流程控制，如下：
+3.	在无shell模块的开发环境中，注册uart中断回调（前提uart中断未被复用），也可实现trace流程控制，如下：
 
-![avatar](images/trace/Server/traceAgent.png)
+![avatar](images/trace/Server/traceAgentTask.png)
 
-上述2、3种方式也交由Trace Client调用，用户可直接在Client端控制trace启动、停止流程。
+上述2、3种方式也交由Trace Client调用，用户可直接在Client端点击相应按钮来控制trace。
 
 
 #### Trace流程控制之驱动适配
@@ -50,17 +60,17 @@ TraceAgent用于响应trace 客户端的请求, 包括：启动、停止、设�
 
 1. 实现SerialPiplineInit(void)，必要的资源创建等，如创建uart接受中断；
 
-2. 实现SerialPiplineReceive(unsigned char *data, unsigned int len, unsigned int timeout), 提供读取uart接受到的数据到data中的功能；
+2. 实现SerialPiplineReceive(unsigned char *data, unsigned int len, unsigned int timeout), 提供读取uart接受到的数据输出到data中的功能；
 
 3. 实现SerialDataSend(unsigned short len, unsigned char *data)，提供uart发送data数据的功能；
 
-4. 实现SerialWait(void)，提供等待信号，等到后再去读取uart数据的功能；
+4. 实现SerialWait(void)，提供等待功能，等待过后再去读取uart数据；
 
 5. 实现OsTracePipelineInit接口，将上述串口功能通过OsTracePipelineReg注册到系统中， 并初始化之，如下图所示：
 
 ![avatar](images/trace/Server/tracePipelineInit.png)
 
-注意：客户端会发送以0xD 0xA 结束的数据串，如 “01 00 00 00 00 00 0d 0a”， SerialPiplineReceive需要将0xA之前的数据赋值给data, 如“01 00 00 00 00 00 0d”
+注意：客户端会发送以0xD 0xA 结束的数据串，如 “01 00 00 00 00 00 0d 0a”， SerialPiplineReceive需要将0xA之前的数据赋值给data, 即“01 00 00 00 00 00 0d”
 
 当trace发送数据流较频繁时，可能存在丢失数据的情况，可能存在Client控制命令丢失的情况。
 
@@ -200,9 +210,13 @@ trace事件类型定义如下：
 
 ![avatar](images/trace/traceSettings2.png)
 
-	如下图所示，用户可以自定义trace事件，需填写事件类型、事件编号、事件描述、事件参数。
+	如下图所示，用户可以自定义trace事件，需填写模块名称、模块掩码、事件描述、事件编号、事件参数。
 
 ![avatar](images/trace/traceSettings3.png)
+
+	参数类型目前支持4种：addr_hex表示16进制数据，UInt32表示无符号32位整型，Int32表示有符号32位整型，TimeoutInOsTicks表示超时相关的数据，如2ticks。
+
+![avatar](images/trace/traceSettings4.png)
 
 #### Trace操作
 
@@ -227,24 +241,35 @@ trace事件类型定义如下：
 
 ![avatar](images/trace/traceEvent.png)
 
+	用户如果单击某一行的数据，则另外三个视图可关联显示当前时间戳的trace视图。
+	用户还可以双击某一行，如该行是某个信号量的操作事件，则会跳转到新视图显示当前信号量的使用记录。
+
+![avatar](images/trace/traceEvent2.png)
+
 #### Trace运行轨迹
 
-	运行轨迹视图展示每个任务在各个时间段的运行状态，可直观查看任务运行时长和切换过程。
+	运行轨迹视图展示每个任务在各个时间段的运行状态，可直观查看任务运行时长和切换过程。将鼠标移动到某个运行轨迹上则显示这段轨迹的运行时长，点击某个运行轨迹则显示这段时间内的事件记录列表。
 
 ![avatar](images/trace/traceTimeline.png)
 
 #### Trace CPU视图
 
-	CPU视图支持柱状图和饼图两种方式展示，柱状图可查看每个时刻每个任务的CPU使用情况；饼图可查看一定时间内每个任务的CPU使用情况。用户还可以通过点击图例中某个任务打开或关闭CPU占用率显示。
-	
-	说明：CPU数据是定时采样，如果trace抓取时间小于0.1s则获取不到cpu数据。
+CPU视图支持柱状图和饼图两种方式展示：
+
+	柱状图可查看每个时刻每个任务的CPU使用情况；	
 
 ![avatar](images/trace/traceCpu1.png)
 
+	饼图可查看一定时间内每个任务的CPU使用情况，用户可以通过调整滚动条左右两端的位置，查看特定时间段内的CPU占用情况；
+
 ![avatar](images/trace/traceCpu2.png)
+
+	说明：用户还可以通过点击图例中某个任务打开或关闭CPU占用率显示。	
+	CPU数据是定时采样，如果trace抓取时间小于0.1s则获取不到cpu数据。
+
 
 #### Trace 内存视图
 
-	内存视图通过折线图展示系统内存的变化趋势，记录每个时刻的内存总量、已用内存和剩余内存。
+	内存视图通过折线图展示系统内存的变化趋势，记录每个时刻不同任务的内存占用情况。用户还可以通过点击图例中某个任务打开或关闭内存占用显示。	
 
 ![avatar](images/trace/traceMem.png)
