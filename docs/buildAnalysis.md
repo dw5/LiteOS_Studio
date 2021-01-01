@@ -24,33 +24,29 @@ LiteOS Studio对构建出的elf文件进行内存占用分析，支持LiteOS开�
 
 #### 内存区域
 内存区域包括每个内存区域数据的一个表格，包含了起始地址和结束地址以及内存占用。
-表格下面默认显示内存占比最高的前三个区域内容。
+表格下面默认显示内存占比最高的前三个区域内容。点击不同的行会在下面仪表盘中显示点击行的数据。
 
 ![avatar](images/buildAnalysis/buildAnalysisRegions.png)
 
-点击不同的行会在下面仪表盘中显示点击行的数据。
+如果列表不足三条数据，显示的图表跟着变化。
 
 ![avatar](images/buildAnalysis/buildAnalysisRegions1.png)
 
 #### 详细信息
-详细信息里显示了Section和Symbol的信息。通过树表格展示层级关系，名称，VMA和LMA。双击Symbol子节点会跳转到具体的代码行号。
-
+详细信息里显示了Section和Symbol的信息。通过树表格展示层级关系，名称，VMA和LMA。双击Symbol子节点会跳转到具体的代码行号。页面也支持搜索Name定位到具体的行，然后通过键盘Enter键跳转到下一个符合搜索条件的行，可以开启支持正则和区分大小写搜索，搜索结果是符合条件的树形数据。
 ![avatar](images/buildAnalysis/buildAnalysisDetails.png)
 
-页面也支持搜索Name定位到具体的行，然后通过键盘Enter键跳转到下一个符合搜索条件的行，点击![avatar](images/buildAnalysis/buildAnalysisRegExp.png)可以开启支持正则搜索。
-
-![avatar](images/buildAnalysis/buildAnalysisDetails1.png)
 
 同时，点击表头的每列会对该列数据进行排序。
 
-![avatar](images/buildAnalysis/buildAnalysisDetails2.png)
+![avatar](images/buildAnalysis/buildAnalysisDetails1.png)
 
 #### 文件大小
 文件大小里展示了文件和文件层级的大小以及总数，点击表头会对该列数据进行排序。
 
 ![avatar](images/buildAnalysis/buildAnalysisFile.png)
 
-表格除了File Name和Rom Size以外其他的列，都是动态变化的。
+表格除了File Name和Rom Size以外其他的列，都是动态变化的。鼠标移到表头显示完整的名称。
 
 ![avatar](images/buildAnalysis/buildAnalysisFile1.png)
 
@@ -59,7 +55,7 @@ LiteOS Studio对构建出的elf文件进行内存占用分析，支持LiteOS开�
 
 ![avatar](images/buildAnalysis/buildAnalysisModule.png)
 
-类似文件大小，模块大小表格除了File Name和Rom Size以外其他的列，也都是动态变化的。下面展示的饼图显示父节点和子节点的数据情况，如果不存在子节点，就只显示父节点的图；如果存在子节点，左侧图是父节点，右侧图是子节点。
+类似文件大小，模块大小表格除了File Name和Rom Size以外其他的列，也都是动态变化的。下面展示的饼图显示父节点和子节点的数据情况，如果不存在子节点，就只显示父节点的图；如果存在子节点，左侧图是父节点，右侧图是子节点。如果模块的Rom Size为0，图表中不显示该项，如果都为0不显示图表。
 
 ![avatar](images/buildAnalysis/buildAnalysisModule1.png)
 

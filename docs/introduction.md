@@ -187,8 +187,13 @@
 **可执行文件路径：** 执行编译后，后台将保存生成的调试可执行文件（`elf`、`out`后缀的文件）路径，并填入`可执行文件路径`下拉菜单中供用户点选，用户也能通过手动输入或点击文件夹图标![avatar](images/browserFoler.png)浏览目录自行配置。
 
 **调试配置：** `调试配置`中可选择复位调试和附加调试两种调试方式。
-
+  
 ![avatar](images/debuggerConfig.png)
+
+**磁盘映射：** 调试器下方可勾选是否通过磁盘映射方式进行调试，勾选后，填写`原工程路径`和`映射磁盘路径`。在确保映射磁盘访问无误情况下，能够进行远程工程调试。
+  - 原工程路径：填写工程在linux上的路径。
+  - 映射磁盘路径：填写本地映射磁盘上的工程路径。
+![avatar](images/debuggerDiskMap.png)
 
 
 #### 串口配置界面介绍
@@ -203,3 +208,63 @@
 **端口状态：** `端口状态`能够实时显示端口是否被占用。
 
 ![avatar](images/serialConfig.png)
+
+### AI模型代码生成向导界面介绍
+按如下方式进入AI模型代码生成向导界面。
+
+![avatar](images/generateAIModel.png)
+
+`HUAWEI LiteOS Studio`集成了AI模型代码生成功能，通过<a href="https://gitee.com/LiteOS/LiteOS_Studio/repository/archive/master.zip" target="_blank">msmicro工具（点击下载）</a>，将压缩包中的`LiteOS_Studio/tools/mindspore_micro/msmicro.rar`解压到本地。
+
+AI模型生成的原理是将`MindSpore`训练的模型或第三方模型转换为`ms`模型，并将`ms`模型解析为算子，生成`.c`文件或指令集优化的汇编代码。然后通过交叉编译器，编译支持不同平台的可执行文件到`IoT`设备部署推理
+
+`tensorflow_lite`模型文件训练与生成方式可参考`tensorflow官方社区`文档操作。
+
+`tensorflow_lite`应用实例网址链接如下：
+<a href="https://www.tensorflow.org/lite/examples?hl=zh-cn" target="_blank">tensorflow_lite应用实例</a>
+
+相关使用api网址链接如下：
+<a href="https://www.tensorflow.org/lite/api_docs?hl=zh-cn" target="_blank">相关api网址</a>
+
+#### AI模型代码生成参数配置介绍 
+AI模型代码生成向导界面可配置的参数包括`Msmicro目录`、`框架类型`、`AI模型文件`、`量化类型`、`配置文件`，需要用户自行配置。
+
+***Msmicro目录：*** 用户自行下载并解压`msmicro`工具后，填入`msmicro.exe`所在目录
+
+***框架类型：*** 包括`TF`、`CAFFE`、`ONNX`、`MS`、`TFLITE`五种，当前开源工程仅适配了`TFLITE`。
+
+***AI模型文件：*** AI模型文件由用户自行获取或自主生成，填入模型文件所在路径。
+
+***量化类型：*** 包括`AwareTraining`、`PostTraining`、`WeightQuant`三种，当前开源工程仅适配了`PostTraining`，当使用`Mnist.tflite`，并需要进行训练后量化时，选择`PostTraining`。
+
+***配置文件：*** 配置项输入框仅在`量化类型`选择了`PostTraining`时出现，需要填入相应的配置文件，当使用`Mnist.tflite`并选择了`PostTraining`量化类型时，需要填入`config.mnist`所在路径，注意，`config.mnist`中需要填入本地校准集的绝对路径。
+
+配置完成后，点击确定，即可开始代码生成，并自动将生成的文件放入相应的编译路径下。
+
+#### AI模型生成示例
+
+开源工程选取开源第三方平台自训练的模型`Mnist.tflite`、`Resnet.tflite`和`Mobilenet.tflite`完成了适配与功能验证，当前三个模型均可以导出成`fp32`推理代码，目前仅`Mnist.tflite`支持量化，而且仅支持训练后量化（`PostTraining`）。
+
+**步骤 1** 将`msmicro.exe`路径填入`Msmicro目录`（仅首次需要填写，填写后将保存为默认地址）
+
+**步骤 2** `框架类型`选择`TFLITE`
+
+**步骤 3** `AI模型文件`选择`Mnist.tflite`/`Resnet.tflite`/`Mobilenet.tflite`
+
+**步骤 4** `量化类型`根据需求选择，使用`Mnist.tflite`并量化时，需要选择`PostTraining`，如果无量化需求，将下拉菜单置空
+
+**步骤 5** `配置文件`将在量化类型选择了`PostTraining`后出现，填入`config.mnist`所在路径
+
+**步骤 6** 点击确定，开始生成代码。当前开源代码下适配了`Mnist`、`Mnist_quant(量化)`、`Resnet`、`Mobilenet`这四种生成代码。
+
+如果`量化类型`、`训练模型`等不满足以上情况，或在`Mnist.tflite`量化时未在`config.mnist`中填入校准集本地绝对路径，可能会导致生成失败。此时可能会提示：`生成AI文件失败`。
+
+当前开源工程在`demos/ai`文件夹下已预置了部分工程文件，包括编译工程及示例所需要的输入测试数据头文件，如下图所示，红框内为预置头文件：
+
+![avatar](images/ai_origin.png)
+
+如使用的工程较旧，可能未进行文件预置与功能适配。代码生成后将无法复制到源码下指定文件夹中，此时弹出提示：`复制AI文件失败，请检查LiteOS工程下是否存在模板文件夹`。
+
+代码生成结束并复制完成后，将弹出提示：`生成AI文件成功`。代码将被生成到`demos/ai`目录下，生成后的工程目录结构如下，红框内为新生成的文件：
+
+![avatar](images/ai_result.png)
