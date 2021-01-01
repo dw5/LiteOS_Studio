@@ -3,13 +3,11 @@
   <h1 align="center">STM32工程示例</h1>
 </p>
 
-本节介绍如何使用`HUAWEI LiteOS Studio` 开发`STM32`开发板工程。[开源LiteOS](https://gitee.com/LiteOS/LiteOS)工程，支持`STM32F429IG`、`STM32L431RC`、`STM32F769NI`等`STM32`系列开发板，以及支持Qemu仿真的`realview-pbx-a9`开发板。
+本节介绍如何使用`HUAWEI LiteOS Studio` 开发`STM32`开发板工程。[开源LiteOS](https://gitee.com/LiteOS/LiteOS)工程，支持`STM32F429IG`、`STM32L431RC`、`STM32F769NI`、`STM32F072RB`、`STM32F103ZE`、`STM32F407ZG`等`STM32`系列开发板，以及支持Qemu仿真的`realview-pbx-a9`开发板。
 
 ### 搭建Windows开发环境
 
-`STM32`工程使用`Makefile`进行构建管理， 需要安装`Python`和`Kconfiglib`库、`Make.exe`构建工具， 推荐`Python 3.7`以上版本。
-
-`STM32`工程使用`GNU Arm Embedded Toolchain`编译交叉工具链，使用`JLink`仿真器。
+`STM32`工程使用`Makefile`进行构建管理， 需要安装`Make.exe`构建工具,`GNU Arm Embedded Toolchain`编译交叉工具链，并使用`JLink`仿真器。
 
 如果使用`OpenOCD`烧录，还需要安装`OpenOCD`烧录工具。
 
@@ -55,7 +53,7 @@
 
 **步骤 3**  选择SDK版本号，当前STM32工程被维护在`https://gitee.com/`，支持最新版本`master`分支
 
-**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F429IG`、`STM32L431RC`、`STM32F769NI`、`realview-pbx-a9`四种开发板
+**步骤 4**  在开发板信息表点选开发板所在行，目前默认提供`STM32F429IG`、`STM32F769NI`、`STM32L431RC`、`STM32F103ZE`、`STM32F072RB`、`STM32F407ZG`、`realview-pbx-a9`七种开发板
 
 点击`确认`按钮，后台将下载并保存所选目标板的SDK，等待下载完成后会在一个新窗口中自动打开新建的工程。
 
@@ -93,7 +91,7 @@
 
 **步骤 5** `Makefile脚本`路径已填入默认值，用户也可以自行更改。对于STM32工程，在`工程根目录`下的`Makefile`文件上`点击右键->设置为Makefile文件`，或点击图标![avatar](images/browserFoler.png)进行自定义设置，也可使用![avatar](images/findScript.png)按钮自动搜索脚本文件
 
-**步骤 6** `Make参数`已填入默认值，用户也可自行修改，编译`STM32`工程时若发现概率性编译失败的问题，可尝试修改参数为`-j 12`
+**步骤 6** `Make参数`已填入默认值，用户也可自行修改
 
 **步骤 7** 配置好后点击确认按钮![avatar](images/confirm.png)进行保存
 
@@ -108,6 +106,8 @@
 ![avatar](images/stm/stm_clean_succ.png)
 
 #### 烧录配置-烧录
+
+以下为直连烧录方式，当有`JLink`远程连接需求时，参考[JLink远程烧录、调测](/project_stm32?id=JLink远程烧录、调测)。
 
 **步骤 1** 点击工程配置界面上的`烧录器`
 

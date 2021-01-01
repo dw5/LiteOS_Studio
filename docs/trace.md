@@ -8,7 +8,7 @@
 
 #### 使能Trace功能
 
-make menuconfig 进入模块配置界面，如下，开启扩展内核下的trace模块
+进入组件配置界面，如下，开启扩展内核下的trace模块
 
 ![avatar](images/trace/Server/traceEnable.png)
 

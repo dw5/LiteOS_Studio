@@ -19,5 +19,13 @@
   - [STM32工程示例](project_stm32.md)
   - [Hi3861V100 WiFi IoT工程示例](project_wifiiot.md)
 
+- 调测工具
+
+  - [Trace工具](trace.md)
+  - [栈估算工具](stackAnalysis.md)
+  - [镜像分析工具](buildAnalysis.md)
+  - [回溯栈分析工具](backTrace.md)
+  - [性能分析工具](perf.md)
+
 - [Windows常用快捷操作](studio_usage.md)
 - [常见问题](studio_qa.md)

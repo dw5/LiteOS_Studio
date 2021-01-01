@@ -16,6 +16,7 @@
   - [栈估算工具](stackAnalysis.md)
   - [镜像分析工具](buildAnalysis.md)
   - [回溯栈分析工具](backTrace.md)
+  - [性能分析工具](perf.md)
 
 - [Windows常用快捷操作](studio_usage.md)
 - [常见问题](studio_qa.md)
