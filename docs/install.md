@@ -7,7 +7,7 @@
 
 ### 获取安装文件
 
-获取`HUAWEI LiteOS Studio`安装包<a href="https://gitee.com/LiteOS/LiteOS_Studio/releases/V1.45.1" target="_blank">`HUAWEI-LiteOS-Studio-Setup-x64-X.XX.X`</a>，xxxx为`LiteOS Studio`版本号，请以实际获取的安装包版本号为准。
+获取`HUAWEI LiteOS Studio`安装包<a href="https://gitee.com/LiteOS/LiteOS_Studio/releases" target="_blank">`HUAWEI-LiteOS-Studio-Setup-x64-X.XX.X`</a>，xxxx为`LiteOS Studio`版本号，请以实际获取的安装包版本号为准。
 
 除此之外，`HUAWEI LiteOS Studio`还提供了基于VSCode的扩展，可供用户作为插件安装在VSCode或其他基于VSCode的定制IDE上。具体可参考[扩展发布说明](/extension?id=扩展发布说明)，并按照扩展安装步骤自行选择安装。
 
