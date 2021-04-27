@@ -218,6 +218,8 @@ trace事件类型定义如下：
 
 ![avatar](images/trace/traceSettings4.png)
 
+        参数类型还支持7种和OS相关的类型：TaskStatus表示任务运行状态，IPCState表示queue/mutex等状态，QueueOperateType表示队列读或写操作，HwiMode表示中断是否共享，TimerMode表示定时器模式，EventReadMode表示读事件模式，TaskAddr表示任务的地址。
+
 #### Trace操作
 
 	Trace工具支持开始Trace、停止Trace、导出Trace、保存Trace、打开Trace。
