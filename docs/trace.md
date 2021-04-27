@@ -58,9 +58,9 @@ TraceAgent用于响应trace 客户端的请求, 包括：启动、停止、设�
 
 下面以uart适配为例，介绍如何实现响应客户端请求：
 
-1. 实现SerialPiplineInit(void)，必要的资源创建等，如创建uart接受中断；
+1. 实现SerialPipelineInit(void)，必要的资源创建等，如创建uart接受中断；
 
-2. 实现SerialPiplineReceive(unsigned char *data, unsigned int len, unsigned int timeout), 提供读取uart接受到的数据输出到data中的功能；
+2. 实现SerialDataReceive(unsigned char *data, unsigned int len, unsigned int timeout), 提供读取uart接受到的数据输出到data中的功能；
 
 3. 实现SerialDataSend(unsigned short len, unsigned char *data)，提供uart发送data数据的功能；
 
@@ -70,7 +70,7 @@ TraceAgent用于响应trace 客户端的请求, 包括：启动、停止、设�
 
 ![avatar](images/trace/Server/tracePipelineInit.png)
 
-注意：客户端会发送以0xD 0xA 结束的数据串，如 “01 00 00 00 00 00 0d 0a”， SerialPiplineReceive需要将0xA之前的数据赋值给data, 即“01 00 00 00 00 00 0d”
+注意：客户端会发送以0xD 0xA 结束的数据串，如 “01 00 00 00 00 00 0d 0a”， SerialDataReceive需要将0xA之前的数据赋值给data, 即“01 00 00 00 00 00 0d”
 
 当trace发送数据流较频繁时，可能存在丢失数据的情况，可能存在Client控制命令丢失的情况。
 
